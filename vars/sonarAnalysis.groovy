@@ -3,7 +3,7 @@ def call(boolean abortOnFailure = false, abortPipeline = false) {
         
         def result = executeSonar()
 
-        def passed = qualityGate(result, timeout)
+        def passed = qualityGate(result)
 
         if(abortOnFailure && !passed && abortOnFailure){
             error 'pipeline aborted proccess...'
@@ -16,7 +16,7 @@ def executeSonar(){
     return 'SECCESS'
 }
 
-def qualityGate(result, timeout){
+def qualityGate(result){
     echo 'quality gate, waiting for results'
     sleep time: 2, unit: 'MINUTES'
     return result == 'SUCCESS'
