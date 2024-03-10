@@ -1,11 +1,11 @@
-def call(boolean abortOnFailure = false, abortPipeline = false) {
+def call(boolean abortOnFailure = false, boolean abortPipeline) {
         //sleep time: 3, unit: 'MINUTES'
         
         def result = executeSonar()
 
         def passed = qualityGate(result)
 
-        if(abortOnFailure && !passed && abortOnFailure){
+        if(abortOnFailure && !passed && abortPipeline){
             error 'pipeline aborted proccess...'
         }
         return passed
