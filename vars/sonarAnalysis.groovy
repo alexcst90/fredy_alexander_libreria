@@ -1,4 +1,4 @@
-def call(boolean abortOnFailure = fales) {
+def call(boolean abortOnFailure = false) {
         //sleep time: 3, unit: 'MINUTES'
         
         def result = executeSonar()
