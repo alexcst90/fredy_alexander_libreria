@@ -1,7 +1,7 @@
 def call() {
-    timeout(time: 1, unit: 'MINUTES'){
+        sleep time: 3, unit: 'MINUTES'
         echo "Ejecucion de las pruebas de calidad de codigo."
-    }
+    
     
 
 }
