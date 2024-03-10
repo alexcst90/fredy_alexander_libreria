@@ -13,7 +13,7 @@ def call(boolean abortOnFailure = false, boolean abortPipeline) {
 
 def executeSonar(){
     echo "Ejecucion de las pruebas de calidad de codigo."
-    return 'SECCESS'
+    return 'SUCCESS'
 }
 
 def qualityGate(result){
