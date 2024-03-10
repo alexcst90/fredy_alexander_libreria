@@ -5,7 +5,7 @@ def call(boolean abortOnFailure, boolean abortPipeline) {
 
         def passed = qualityGate(result)
 
-        if(abortOnFailure && !passed && abortPipeline){
+        if(abortOnFailure && passed && abortPipeline){
             error 'pipeline aborted proccess...'
         }
 
