@@ -18,6 +18,6 @@ def executeSonar(){
 
 def qualityGate(result){
     echo 'quality gate, waiting for results'
-    sleep time: 2, unit: 'MINUTES'
+   // sleep time: 2, unit: 'MINUTES'
     return result == 'SUCCESS'
 }
