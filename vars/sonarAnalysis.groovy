@@ -2,7 +2,6 @@ def call(boolean abortOnFailure = false, abortPipeline = false) {
         //sleep time: 3, unit: 'MINUTES'
         
         def result = executeSonar()
-        def timeout = 2 * 60
 
         def passed = qualityGate(result, timeout)
 
@@ -19,6 +18,6 @@ def executeSonar(){
 
 def qualityGate(result, timeout){
     echo 'quality gate, waiting for results'
-    sleep(timeout)
+    sleep time: 2, unit: 'MINUTES'
     return result == 'SUCCESS'
 }
