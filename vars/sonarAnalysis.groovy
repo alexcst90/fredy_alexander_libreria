@@ -9,7 +9,6 @@ def call(boolean abortOnFailure, boolean abortPipeline) {
             error 'pipeline aborted proccess...'
         }
 
-        echo 'abortOnFailure '+abortOnFailure + 'passed '+ passed + 'abortPipeline' + abortPipeline
         return passed
 }
 
@@ -20,6 +19,6 @@ def executeSonar(){
 
 def qualityGate(result){
     echo 'quality gate, waiting for results'
-   // sleep time: 2, unit: 'MINUTES'
+    sleep time: 2, unit: 'MINUTES'
     return result == 'SUCCESS'
 }
