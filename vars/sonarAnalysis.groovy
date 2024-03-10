@@ -8,6 +8,8 @@ def call(boolean abortOnFailure = false, boolean abortPipeline) {
         if(abortOnFailure && !passed && abortPipeline){
             error 'pipeline aborted proccess...'
         }
+
+        echo 'abortOnFailure '+abortOnFailure + 'passed '+ passed + 'abortPipeline' + abortPipeline
         return passed
 }
 
