@@ -1,6 +1,7 @@
-def call(boolean abortOnFailure, boolean abortPipeline) {
+def call(boolean abortOnFailure, boolean abortPipeline, String branchName = env.BRANCH_NAME) {
         //sleep time: 3, unit: 'MINUTES'
         
+        echo '#### branch name: ' + branchName
         def result = executeSonar()
 
         def passed = qualityGate(result)
