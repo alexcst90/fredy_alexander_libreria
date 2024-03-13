@@ -14,7 +14,7 @@ def call(boolean abortOnFailure, boolean abortPipeline, String branchName = env.
             }else{
                 if(branchName.startWith('hotfix')){
                     echo 'start with hotfix'
-                }s
+                }
             }
         }
 
