@@ -9,7 +9,7 @@ def call(boolean abortOnFailure, boolean abortPipeline, String branchName = env.
         if(abortPipeline){
             error 'pipeline aborted proccess...'
         }else{
-            if(branchName === 'master'){
+            if(branchName == 'master'){
                 error 'pipeline aborted proccess... branch master'
             }else{
                 if(branchName.startWith('hotfix')){
