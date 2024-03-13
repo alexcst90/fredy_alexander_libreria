@@ -6,8 +6,16 @@ def call(boolean abortOnFailure, boolean abortPipeline, String branchName = env.
 
         def passed = qualityGate(result)
 
-        if(abortOnFailure && passed && abortPipeline){
+        if(abortPipeline){
             error 'pipeline aborted proccess...'
+        }else{
+            if(branchName === 'master'){
+                error 'pipeline aborted proccess... branch master'
+            }else{
+                if(branchName.startWith('hotfix')){
+                    echo 'start with hotfix'
+                }s
+            }
         }
 
         return passed
@@ -22,4 +30,4 @@ def qualityGate(result){
     echo 'quality gate, waiting for results'
     sleep time: 2, unit: 'MINUTES'
     return result == 'SUCCESS'
-}
+}<
